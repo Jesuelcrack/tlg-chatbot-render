@@ -115,7 +115,9 @@ def initialize_logging() -> io.StringIO:
     console_handler = logging.getLogger("root").handlers[0]
 
     # Set the stream of the console handler to the StringIO object
-    console_handler.stream = console_out
+        # Get app handler from root logger
+    console_handler = logging.getLogger("root").handlers[0]
+
 
     return console_out
 
